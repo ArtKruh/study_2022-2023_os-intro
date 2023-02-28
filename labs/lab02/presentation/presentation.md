@@ -1,12 +1,12 @@
 ---
 ## Front matter
 lang: ru-RU
-title: Лабораторная работа 1
+title: Лабораторная работа 2
 author:
   - Крухмалев А.В.
 institute:
   - Российский университет дружбы народов, Москва, Россия
-date: 16 февраля 2023
+date: 17 февраля 2023
 
 ## i18n babel
 babel-lang: russian
