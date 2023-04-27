@@ -1,0 +1,23 @@
+#!/bin/bash
+
+LOCKFILE="./lock.file"
+exec {fn}>$LOCKFILE 
+
+if test -f "$LOCKFILE"
+then
+
+    while
+        [ 1 = 1 ]
+    do
+        if flock -n ${fn}
+        then
+            echo "Файл заблокирован"
+            sleep 3
+            echo "Файл разюлокирован"
+            flock -u ${fn}
+        else
+            echo "Файл заблокирован"
+            sleep 3
+        fi
+    done
+fi

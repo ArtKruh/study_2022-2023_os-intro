@@ -1,0 +1,29 @@
+#!/bin/bash
+
+RES=result
+SRC=comparison.cpp
+
+if [ "$SRC" -nt "$RES" ]
+then
+    echo "Creating $RES ..."
+    g++ -o $RES $SRC
+fi
+
+./$RES $1
+
+ers=$?
+
+if [ "$ers" == "1" ]
+then 
+    echo "input > 0" 
+fi
+
+if [ "$ers" == "2" ]
+then 
+    echo "input = 0" 
+fi
+if [ "$ers" == "3" ]
+then 
+
+    echo "input < 0" 
+fi

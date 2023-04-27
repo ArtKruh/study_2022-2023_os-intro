@@ -1,0 +1,12 @@
+#!/bin/bash
+
+while getopts :p opt
+do
+    case $opt in
+    p)dir="$OPTARG";;
+    esac
+done
+
+find $dir -mtime -7 -mtime +0 -type f > arch.txt 
+
+tar -cf res.tar -T arch.txt

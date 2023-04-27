@@ -1,0 +1,2 @@
+zip file1.zip file1
+mv file1.zip ~/backup

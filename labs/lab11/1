@@ -1,0 +1,14 @@
+#!/bin/bash
+
+while getopts "i:o:p:cn" opt
+do
+    case $opt in
+    i)inputfile="$OPTARG";;
+    o)outputfile="$OPTARG";;
+    p)sample="$OPTARG";;
+    c)reg="";;
+    n)line="";;
+    esac
+done
+
+grep -n "$sample" "$inputfile" > "outputfile"
